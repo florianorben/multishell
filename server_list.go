@@ -55,13 +55,18 @@ func (sl *ServerList) Exec(cmd string) []byte {
 
 	for i, server := range sl.list {
 		go func(i int, cmd string, server *Server) {
+			defer wg.Done()
+			
 			output, err := server.Exec(cmd)
+			
 			if err != nil {
 				outputs[i] = []byte(err.Error())
-			} else {
-				outputs[i] = output
-			}
-			wg.Done()
+				return
+			} 
+			
+			outputs[i] = output
+			return
+
 		}(i, cmd, server)
 	}
 
