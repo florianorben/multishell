@@ -65,8 +65,6 @@ func (sl *ServerList) Exec(cmd string) []byte {
 			} 
 			
 			outputs[i] = output
-			return
-
 		}(i, cmd, server)
 	}
 
