@@ -10,6 +10,5 @@ require (
 	github.com/helloyi/go-sshclient v0.0.0-20180820025159-530a19534ac2
 	github.com/mattn/go-colorable v0.0.9 // indirect
 	github.com/mattn/go-isatty v0.0.4 // indirect
-	golang.org/x/crypto v0.0.0-20181106171534-e4dc69e5b2fd
-	golang.org/x/sys v0.0.0-20181106135930-3a76605856fd // indirect
+	golang.org/x/crypto v0.1.0
 )
